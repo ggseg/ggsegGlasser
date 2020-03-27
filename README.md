@@ -13,7 +13,11 @@ status](https://travis-ci.com/LCBC-UiO/ggsegGlasser.svg?branch=master)](https://
 coverage](https://codecov.io/gh/LCBC-UiO/ggsegGlasser/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/ggsegGlasser?branch=master)
 <!-- badges: end -->
 
-The goal of ggsegGlasser is to …
+This repository contains an R package with atlas data for ggseg and
+ggseg3d for the Glasser parcellation for HPC.
+
+Glasser et al. (2016) Nature, volume 536, pages 171–178
+[pubmed](https://www.nature.com/articles/nature18933)
 
 ## Installation
 
