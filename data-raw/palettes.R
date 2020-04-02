@@ -10,8 +10,8 @@ devtools::load_all(".")
 # make atlas ----
 
 glasser <- ggsegExtra::make_ggseg3d_2_ggseg(glasser_3d,
-                                               steps = 1:7,
-                                               smoothness = 8,
+                                               steps = 5:7,
+                                               smoothness = 5,
                                                keep = 0.05,
                                                output_dir = "~/Desktop/test/")
 
