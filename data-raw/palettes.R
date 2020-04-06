@@ -11,8 +11,9 @@ devtools::load_all(".")
 # make atlas ----
 
 glasser <- ggsegExtra::make_ggseg3d_2_ggseg(glasser_3d,
-                                               steps = 6:7,
-                                               tolerance = 0.1,
+                                               steps = 5:7,
+                                            smoothness = 2,
+                                               tolerance = .5,
                                                output_dir = "~/Desktop/test/")
 
 # remove name from medial wall
@@ -23,7 +24,8 @@ glasser$geometry <- NULL
 glasser <- as_tibble(glasser)
 glasser <- as_ggseg_atlas(glasser)
 ggseg(atlas=glasser, show.legend = FALSE,
-      colour = "black", position="stacked",
+      # colour = "black",
+      position="stacked",
       alpha=.6,
       mapping = aes(fill=region)) +
   scale_fill_brain("glasser", package = "ggsegGlasser")
