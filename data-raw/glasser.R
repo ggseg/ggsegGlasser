@@ -1,4 +1,21 @@
-library(tidyverse)
+devtools::load_all("../../ggsegExtra/")
+devtools::load_all(".")
+library(dplyr)
+
+glasser_3d_2 <- make_aparc_2_3datlas(annot = "HCP-MMP1",
+                                     annot_dir = "data-raw/glasser/label/",
+                                     output_dir = "data-raw")
+
+desterieux_3d_2 <- desterieux_3d_2 %>%
+  mutate(atlas = "desterieux_3d")
+
+# Make palette ----
+brain_pals <- make_palette_ggseg(desterieux_3d)
+
+usethis::use_data(brain_pals, internal = TRUE, overwrite = TRUE)
+devtools::load_all(".")
+
+
 
 glasser = geobrain_hcp %>%
   separate(aparc, c("hemi","area", "DEL"), sep="_", remove = F) %>%
@@ -36,8 +53,9 @@ glasser <- glasser %>%
 #   )
 # }
 
-glasser <- glasser %>% 
-  unnest(ggseg) %>% 
+glasser <- glasser %>%
+  unnest(ggseg) %>%
   select(-.pos)
-glasser <- as_ggseg_atlas(glasser)
+glasser <- as_brain_atlas(glasser)
+glasser$palette <- brain_pals$glasser
 usethis::use_data(glasser, internal = FALSE, overwrite = TRUE, compress = "xz")

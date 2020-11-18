@@ -1,6 +1,12 @@
 devtools::load_all("../../ggsegExtra/")
-devtools::load_all("../../ggsegExtra/")
 devtools::load_all(".")
+
+
+
+# Make  3d ----
+# read_annotation("data-raw/lh.HCPMMP1.annot")
+# make_aparc_2_3datlas("HCPMMP1", )
+
 
 # Make palette ----
 brain_pals <- make_palette_ggseg(glasser_3d)
@@ -11,18 +17,19 @@ devtools::load_all(".")
 # make atlas ----
 
 glasser <- ggsegExtra::make_ggseg3d_2_ggseg(glasser_3d,
-                                               steps = 5:7,
+                                            steps = 3:7,
                                             smoothness = 2,
-                                               tolerance = .5,
-                                               output_dir = "~/Desktop/test/")
+                                            tolerance = .5,
+                                            output_dir = "data-raw/")
 
 # remove name from medial wall
 glasser <- glasser %>%
-  mutate(region = ifelse(grepl("wall", region), NA, region))
+  mutate(region = ifelse(grepl("wall", region), NA, region)) %>%
+  as_ggseg_atlas()
 
-glasser$geometry <- NULL
-glasser <- as_tibble(glasser)
-glasser <- as_ggseg_atlas(glasser)
+# glasser$geometry <- NULL
+# glasser <- as_tibble(glasser)
+# glasser <- as_ggseg_atlas(glasser)
 ggseg(atlas=glasser, show.legend = FALSE,
       # colour = "black",
       position="stacked",

@@ -9,7 +9,8 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
   fig.path = "man/figures/README-",
-  out.width = "100%"
+  out.width = "100%",
+  fig.retina = 3
 )
 devtools::load_all(".")
 ```
@@ -51,8 +52,7 @@ library(ggsegGlasser)
 ```{r fig.height=8}
 library(ggseg)
 
-ggseg(atlas = glasser, mapping = aes(fill = region)) +
-  scale_fill_brain("glasser", package = "ggsegGlasser") +
+plot(glasser) +
   theme(legend.position = "bottom",
         legend.text = element_text(size = 9)) +
   guides(fill = guide_legend(ncol = 7))

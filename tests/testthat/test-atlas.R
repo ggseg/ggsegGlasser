@@ -1,22 +1,17 @@
 # ggseg ----
-context("test-adapt_scales")
-test_that("Check that ggseg:::adapt_scales is working", {
-  expect_equal(mode(ggseg:::adapt_scales(unnest(glasser, ggseg))), "list")
-})
-
 context("test-palettes")
 test_that("check new palettes work", {
   expect_equal(length(brain_pal("glasser", package = "ggsegGlasser")), 180)
 
   expect_error(brain_pal("glasser"), "not a valid")
 
-  expect_true(all(names(brain_pal("glasser", package = "ggsegGlasser")) %in% glasser$region))
+  expect_true(all(names(brain_pal("glasser", package = "ggsegGlasser")) %in% brain_regions(glasser)))
 })
 
 context("test-ggseg-atlas")
 test_that("atlases are true ggseg atlases", {
 
-  expect_true(is_ggseg_atlas(glasser))
+  expect_true(is_brain_atlas(glasser))
 
 })
 

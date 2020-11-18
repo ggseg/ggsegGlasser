@@ -16,7 +16,7 @@ coverage](https://codecov.io/gh/LCBC-UiO/ggsegGlasser/branch/master/graph/badge.
 This repository contains an R package with atlas data for ggseg and
 ggseg3d for the Glasser parcellation for HPC.
 
-Glasser et al. (2016) Nature, volume 536, pages 171–178
+Glasser et al. (2016) Nature, volume 536, pages 171–178
 [pubmed](https://www.nature.com/articles/nature18933)
 
 ## Installation
@@ -46,8 +46,7 @@ library(ggsegGlasser)
 ``` r
 library(ggseg)
 
-ggseg(atlas = glasser, mapping = aes(fill = region)) +
-  scale_fill_brain("glasser", package = "ggsegGlasser") +
+plot(glasser) +
   theme(legend.position = "bottom",
         legend.text = element_text(size = 9)) +
   guides(fill = guide_legend(ncol = 7))
