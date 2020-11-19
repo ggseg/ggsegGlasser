@@ -1,4 +1,11 @@
 # ggseg ----
+
+
+library(tidyr, quietly = TRUE, warn.conflicts = FALSE)
+library(ggseg, quietly = TRUE, warn.conflicts = FALSE)
+library(ggseg3d, quietly = TRUE, warn.conflicts = FALSE)
+
+
 context("test-palettes")
 test_that("check new palettes work", {
   expect_equal(length(brain_pal("glasser", package = "ggsegGlasser")), 180)
