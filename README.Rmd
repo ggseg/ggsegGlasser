@@ -12,7 +12,6 @@ knitr::opts_chunk$set(
   out.width = "100%",
   fig.retina = 3
 )
-devtools::load_all(".")
 ```
 
 
@@ -22,6 +21,7 @@ devtools::load_all(".")
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/ggsegGlasser?branch=master&svg=true)](https://ci.appveyor.com/project/LCBC-UiO/ggsegGlasser)
 [![Travis build status](https://travis-ci.com/LCBC-UiO/ggsegGlasser.svg?branch=master)](https://travis-ci.com/LCBC-UiO/ggsegGlasser)
 [![Codecov test coverage](https://codecov.io/gh/LCBC-UiO/ggsegGlasser/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/ggsegGlasser?branch=master)
+[![R build status](https://github.com/LCBC-UiO/ggsegGlasser/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/ggsegGlasser/actions)
 <!-- badges: end -->
 
 This repository contains an R package with atlas data for ggseg and ggseg3d for the Glasser parcellation for HPC.
@@ -61,6 +61,7 @@ plot(glasser) +
 
 ```{r "noneval", eval=FALSE}
 library(ggseg3d)
+library(dplyr)
 
 ggseg3d(atlas = glasser_3d) %>% 
   pan_camera("right lateral")
@@ -68,6 +69,8 @@ ggseg3d(atlas = glasser_3d) %>%
 
 ```{r "orca", include=FALSE}
 library(ggseg3d)
+library(dplyr)
+
 
 p <- ggseg3d(atlas = glasser_3d) %>%
   pan_camera("right lateral") %>%

@@ -11,6 +11,8 @@ status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/ggsegGlasser
 status](https://travis-ci.com/LCBC-UiO/ggsegGlasser.svg?branch=master)](https://travis-ci.com/LCBC-UiO/ggsegGlasser)
 [![Codecov test
 coverage](https://codecov.io/gh/LCBC-UiO/ggsegGlasser/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/ggsegGlasser?branch=master)
+[![R build
+status](https://github.com/LCBC-UiO/ggsegGlasser/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/ggsegGlasser/actions)
 <!-- badges: end -->
 
 This repository contains an R package with atlas data for ggseg and
@@ -45,6 +47,7 @@ library(ggsegGlasser)
 
 ``` r
 library(ggseg)
+#> Loading required package: ggplot2
 
 plot(glasser) +
   theme(legend.position = "bottom",
@@ -56,6 +59,7 @@ plot(glasser) +
 
 ``` r
 library(ggseg3d)
+library(dplyr)
 
 ggseg3d(atlas = glasser_3d) %>% 
   pan_camera("right lateral")
