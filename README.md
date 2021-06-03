@@ -1,14 +1,11 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# ggsegGlasser
+# ggsegGlasser <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
 
-[![AppVeyor build
-status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/ggsegGlasser?branch=master&svg=true)](https://ci.appveyor.com/project/LCBC-UiO/ggsegGlasser)
-[![Travis build
-status](https://travis-ci.com/LCBC-UiO/ggsegGlasser.svg?branch=master)](https://travis-ci.com/LCBC-UiO/ggsegGlasser)
+[![DOI](https://zenodo.org/badge/250278991.svg)](https://zenodo.org/badge/latestdoi/250278991)
 [![Codecov test
 coverage](https://codecov.io/gh/LCBC-UiO/ggsegGlasser/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/ggsegGlasser?branch=master)
 [![R build
@@ -22,6 +19,19 @@ Glasser et al. (2016) Nature, volume 536, pages 171–178
 [pubmed](https://www.nature.com/articles/nature18933)
 
 ## Installation
+
+We recommend installing the ggseg-atlases through the ggseg
+[r-universe](https://ggseg.r-universe.dev/ui#builds):
+
+``` r
+# Enable this universe
+options(repos = c(
+    ggseg = 'https://ggseg.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'))
+
+# Install some packages
+install.packages('ggsegGlasser')
+```
 
 You can install the released version of ggsegGlasser from
 [CRAN](https://CRAN.R-project.org) with:
@@ -47,7 +57,7 @@ library(ggsegGlasser)
 
 ``` r
 library(ggseg)
-#> Loading required package: ggplot2
+library(ggplot2)
 
 plot(glasser) +
   theme(legend.position = "bottom",
@@ -55,7 +65,7 @@ plot(glasser) +
   guides(fill = guide_legend(ncol = 7))
 ```
 
-<img src="man/figures/README-unnamed-chunk-3-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />
 
 ``` r
 library(ggseg3d)

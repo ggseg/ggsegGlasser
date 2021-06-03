@@ -15,11 +15,10 @@ knitr::opts_chunk$set(
 ```
 
 
-# ggsegGlasser
+# ggsegGlasser <img src='man/figures/logo.png' align="right" height="138.5" />
 
 <!-- badges: start -->
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/LCBC-UiO/ggsegGlasser?branch=master&svg=true)](https://ci.appveyor.com/project/LCBC-UiO/ggsegGlasser)
-[![Travis build status](https://travis-ci.com/LCBC-UiO/ggsegGlasser.svg?branch=master)](https://travis-ci.com/LCBC-UiO/ggsegGlasser)
+[![DOI](https://zenodo.org/badge/250278991.svg)](https://zenodo.org/badge/latestdoi/250278991)
 [![Codecov test coverage](https://codecov.io/gh/LCBC-UiO/ggsegGlasser/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/ggsegGlasser?branch=master)
 [![R build status](https://github.com/LCBC-UiO/ggsegGlasser/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/ggsegGlasser/actions)
 <!-- badges: end -->
@@ -29,6 +28,18 @@ This repository contains an R package with atlas data for ggseg and ggseg3d for 
 Glasser et al. (2016) Nature, volume 536, pages 171–178 [pubmed](https://www.nature.com/articles/nature18933)
 
 ## Installation
+
+We recommend installing the ggseg-atlases through the ggseg [r-universe](https://ggseg.r-universe.dev/ui#builds):
+
+```{r eval = FALSE}
+# Enable this universe
+options(repos = c(
+    ggseg = 'https://ggseg.r-universe.dev',
+    CRAN = 'https://cloud.r-project.org'))
+
+# Install some packages
+install.packages('ggsegGlasser')
+```
 
 You can install the released version of ggsegGlasser from [CRAN](https://CRAN.R-project.org) with:
 
@@ -51,6 +62,7 @@ library(ggsegGlasser)
 
 ```{r fig.height=8}
 library(ggseg)
+library(ggplot2)
 
 plot(glasser) +
   theme(legend.position = "bottom",
