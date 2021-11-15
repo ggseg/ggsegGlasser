@@ -5,11 +5,11 @@
 
 <!-- badges: start -->
 
-[![DOI](https://zenodo.org/badge/250278991.svg)](https://zenodo.org/badge/latestdoi/250278991)
-[![Codecov test
-coverage](https://codecov.io/gh/LCBC-UiO/ggsegGlasser/branch/master/graph/badge.svg)](https://codecov.io/gh/LCBC-UiO/ggsegGlasser?branch=master)
 [![R build
 status](https://github.com/LCBC-UiO/ggsegGlasser/workflows/R-CMD-check/badge.svg)](https://github.com/LCBC-UiO/ggsegGlasser/actions)
+[![DOI](https://zenodo.org/badge/250278991.svg)](https://zenodo.org/badge/latestdoi/250278991)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/ggsegGlasser)](https://CRAN.R-project.org/package=ggsegGlasser)
 <!-- badges: end -->
 
 This repository contains an R package with atlas data for ggseg and
@@ -57,6 +57,8 @@ library(ggsegGlasser)
 
 ``` r
 library(ggseg)
+#> Warning: package 'ggseg' was built under R version 4.1.1
+#> Loading required package: ggplot2
 library(ggplot2)
 
 plot(glasser) +
